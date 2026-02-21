@@ -24,19 +24,29 @@
     background-color: #0056b3;
 }
 
-/* متغیرها و رنگ‌های حالت تاریک */
-body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
+/* --- استایل‌های حالت روشن (Light Mode) --- */
+body.light-mode {
+    background-color: #f5f6fa !important;
+    color: #1a1a1a !important;
 }
 
-/* اگر سایت باکس یا کانتینر دارد، رنگ پس‌زمینه آن را هم در حالت تاریک عوض می‌کنیم */
-body.dark-mode .container, 
-body.dark-mode textarea, 
-body.dark-mode input {
-    background-color: #1e1e1e !important;
-    color: #ffffff !important;
-    border-color: #333333 !important;
+/* روشن کردن باکس‌ها، کادرهای متنی و ورودی‌ها */
+body.light-mode .container,
+body.light-mode textarea,
+body.light-mode input,
+body.light-mode select {
+    background-color: #ffffff !important;
+    color: #333333 !important;
+    border: 1px solid #cccccc !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* تغییر رنگ تیترها و لیبل‌ها برای خوانایی بهتر در حالت روشن */
+body.light-mode h1, 
+body.light-mode h2, 
+body.light-mode h3, 
+body.light-mode label {
+    color: #2c3e50 !important;
 }
         
         /* ==================== Base Styles ==================== */
@@ -723,20 +733,21 @@ body.dark-mode input {
     // پیدا کردن دکمه تغییر تم
     const themeToggleBtn = document.getElementById('theme-toggle');
     
-    // بررسی اینکه آیا کاربر قبلاً حالت تاریک را انتخاب کرده بود یا خیر
+    // چون سایت پیش‌فرض تاریک است، بررسی می‌کنیم آیا کاربر حالت روشن را قبلا انتخاب کرده یا خیر
     const currentTheme = localStorage.getItem('theme');
-    if (currentTheme === 'dark') {
-        document.body.classList.add('dark-mode');
+    if (currentTheme === 'light') {
+        document.body.classList.add('light-mode');
     }
 
     // عملکرد کلیک روی دکمه
     themeToggleBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
+        // تغییر وضعیت کلاس حالت روشن
+        document.body.classList.toggle('light-mode');
         
-        // ذخیره انتخاب کاربر در مرورگر تا بعد از رفرش صفحه هم باقی بماند
-        let theme = 'light';
-        if (document.body.classList.contains('dark-mode')) {
-            theme = 'dark';
+        // ذخیره انتخاب کاربر در مرورگر
+        let theme = 'dark'; // فرض اولیه: تاریک
+        if (document.body.classList.contains('light-mode')) {
+            theme = 'light'; // اگر کلاس روشن فعال بود، ذخیره کن: روشن
         }
         localStorage.setItem('theme', theme);
     });
