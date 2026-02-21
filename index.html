@@ -66,7 +66,50 @@ body.light-mode h3,
 body.light-mode label {
     color: #2c3e50 !important;
 }
-        
+/* =========================================
+   استایل‌های فوتر (حالت تاریک پیش‌فرض)
+========================================= */
+footer {
+    text-align: center;
+    padding: 25px 10px;
+    margin-top: 40px;
+    font-size: 15px;
+    color: #9ca3af; /* رنگ متن خاکستری ملایم برای حالت تاریک */
+    direction: rtl; /* راست‌چین کردن استاندارد فارسی */
+}
+
+footer p {
+    margin: 0;
+}
+
+/* استایل کلمه sMbLuE (لینک) در حالت تاریک */
+footer a {
+    color: #3b82f6; /* رنگ آبی جذاب مثل عکس */
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, sans-serif; /* فونت ساده انگلیسی برای اسم */
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #60a5fa; /* وقتی ماوس میره روش کمی روشن‌تر میشه */
+    text-decoration: underline;
+}
+
+/* =========================================
+   استایل‌های فوتر در حالت روشن (Light Mode)
+========================================= */
+body.light-mode footer {
+    color: #4b5563 !important; /* رنگ متن تیره‌تر برای خوانایی در پس‌زمینه روشن */
+}
+
+body.light-mode footer a {
+    color: #2563eb !important; /* رنگ آبی کمی تیره‌تر و خواناتر در حالت روشن */
+}
+
+body.light-mode footer a:hover {
+    color: #1d4ed8 !important;
+}        
         /* ==================== Base Styles ==================== */
         * {
             margin: 0;
@@ -770,5 +813,8 @@ body.light-mode label {
         localStorage.setItem('theme', theme);
     });
 </script>
+    <footer>
+        <p>طراحی شده با ❤️ و ☕ توسط <a href="https://t.me/syd_sj" target="_blank" rel="noopener noreferrer">sMbLuE</a></p>
+    </footer>
 </body>
 </html>
