@@ -8,6 +8,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+        /* --- استایل نوار بالایی (هدر) در حالت روشن --- */
+body.light-mode header, 
+body.light-mode nav,
+body.light-mode .navbar {
+    background-color: #e5e7eb !important; /* رنگ پس‌زمینه طوسی ملایم */
+    border-bottom: 1px solid #d1d5db !important; /* یک خط ظریف در پایین نوار برای جداسازی */
+}
+
+/* تغییر رنگ متن‌های داخل نوار بالایی برای خوانایی بهتر */
+body.light-mode header h1,
+body.light-mode header h2,
+body.light-mode header span,
+body.light-mode header a,
+body.light-mode nav span,
+body.light-mode nav a {
+    color: #1f2937 !important; /* رنگ متن خاکستری تیره/مشکی */
+}
 /* استایل دکمه تغییر تم */
 .theme-btn {
     padding: 8px 15px;
