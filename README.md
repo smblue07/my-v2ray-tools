@@ -1,66 +1,28 @@
-# V2Ray Converter ⚡
+# V2Ray Converter & Manager ⚡
 
-A simple web tool to convert between V2Ray JSON configs and share links.
+این پروژه یک ابزار تحت وب بسیار سبک، سریع و کاربردی برای تبدیل، ویرایش و مدیریت پیکربندی‌ها (کانفیگ‌ها) و لینک‌های V2Ray است. این سیستم به صورت کاملاً استاتیک طراحی شده و برای اجرا نیازی به هیچ‌گونه سرور (Backend) یا پایگاه داده‌ای ندارد.
 
-🔗 **[Try it online](https://iaghapour.github.io/v2ray-converter/)**
+## 🌟 ویژگی‌ها و امکانات کلیدی
 
-## What is this?
+* **تبدیل JSON به لینک (JSON → Links):** تبدیل آسان کدهای ساختاریافته JSON به لینک‌های استاندارد کلاینت‌های V2Ray (مانند `vmess://`، `vless://` و...).
+* **تبدیل لینک به JSON (Links → JSON):** مهندسی معکوس لینک‌های کانفیگ و تبدیل آن‌ها به فرمت JSON جهت مشاهده دقیق جزئیات و ویرایش پارامترها.
+* **مدیریت Base64:**
+    * **رمزگشایی (Decode):** استخراج لینک‌های کانفیگ از داخل لینک‌های اشتراک (Subscription) که با Base64 کدگذاری شده‌اند.
+    * **رمزنگاری (Encode):** تبدیل خروجی نهایی به فرمت Base64 برای ساخت لینک‌های سابسکریپشن اختصاصی و استاندارد.
+* **پشتیبانی از فایل:** امکان بارگذاری مستقیم فایل‌های متنی یا JSON (Load File) بدون نیاز به کپی و پیست کردن.
+* **خروجی سریع:** قابلیت کپی کردن با یک کلیک یا دانلود فایل خروجی.
 
-This tool helps you convert V2Ray/Xray configurations in two ways:
+## 🔒 امنیت و حریم خصوصی (Privacy)
 
-- **JSON → Links**: Convert your JSON config to shareable links (vless://, vmess://, etc.)
-- **Links → JSON**: Convert share links back to standard JSON format
+تمام پردازش‌های این ابزار **۱۰۰٪ در سمت کاربر (Client-side)** و داخل مرورگر شما انجام می‌شود. هیچ‌کدام از کانفیگ‌ها، لینک‌ها یا اطلاعات ورودی شما به هیچ سروری ارسال نمی‌شوند و در هیچ دکمه‌ای ذخیره نخواهند شد. بنابراین می‌توانید با خیالی آسوده از آن برای مدیریت کانفیگ‌های شخصی خود استفاده کنید.
 
-Everything runs in your browser - no data is sent to any server.
+## 🚀 راهنمای استفاده و نصب
 
-## Features
+از آنجایی که این پروژه شامل فایل‌های استاتیک (HTML, CSS, JS) است، راه‌اندازی آن بسیار ساده است:
 
-✅ Bidirectional conversion (JSON ↔ Links)  
-✅ Supports VLESS, VMess, Trojan, Shadowsocks  
-✅ Base64 encoding/decoding for subscriptions  
-✅ File upload support  
-✅ 100% client-side (private & secure)
-
-## Usage
-
-### Convert JSON to Links
-
-1. Paste your JSON config in the **Input** panel
-2. Click **JSON → Links**
-3. Copy or download the generated links
-
-### Convert Links to JSON
-
-1. Paste V2Ray links in the **Input** panel (one per line)
-2. Click **Links → JSON**
-3. Get standard JSON config for Xray/V2Ray
-
-### Base64 Subscription
-
-- **Encode**: Convert links to Base64 subscription format
-- **Decode**: Decode Base64 subscriptions back to readable links
-
-## Supported Protocols
-
-| Protocol | Status |
-|----------|--------|
-| VLESS | ✅ Full support |
-| VMess | ✅ Full support |
-| Trojan | ✅ Full support |
-| Shadowsocks | ✅ Basic support |
-
-**Transport**: TCP, WebSocket, gRPC  
-**Security**: TLS, Reality, None
-
-## License
-
-MIT License - Free to use for personal and commercial purposes.
-
-## Support
-
-⭐ Star this repo if you find it useful  
-📺 [YouTube: @iAghapour](https://www.youtube.com/@iAghapour?sub_confirmation=1)
+۱. کدها را دانلود کرده یا کلون (Clone) کنید.
+۲. فایل `index.html` را در مرورگر خود باز کنید.
+۳. **(پیشنهادی):** برای دسترسی آنلاین، می‌توانید کدها را در یک مخزن GitHub قرار داده و سرویس **GitHub Pages** را برای آن فعال کنید تا سایت شما به صورت رایگان در دسترس قرار گیرد.
 
 ---
-
-Made with ❤️ for internet freedom
+ساخته شده با ❤️ برای دسترسی آزاد.
